@@ -15,8 +15,8 @@
 			float: center;
 			overflow: auto;
 			margin-left: auto;
-    			margin-right: auto;
-		}		
+			margin-right: auto;
+		}
 	</style>
 
 	<!-- Load Jmol javascript library -->
@@ -60,6 +60,7 @@
 
 <script>
 //Criando uma variável global para nos dizer em qual estado a tela atual se encontra.
+var elem = document.documentElement;
     //Se o estado atual for "FullScreen", desativá-lo.
     //Note que para as verificações é feito uma validação para todos os possíveis navegadores, facilitando a sua vida.
       if (document.exitFullscreen) {
