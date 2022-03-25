@@ -10,10 +10,10 @@
 		/* defines height, width and orientation of the Jmol div element */
 		#jmol_div{
 			position: fixed;
-			height: 100vh;
-			width:  100vw;
+			height: calc(100vh - 2px);
+			width:  calc(100vw - 2px);
 			float: center;
-			overflow: auto;
+			vertical-align: middle;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -33,8 +33,8 @@
 		// initialize Jmol Applet
 		var myJmol = "myJmol";
 		var Info = {
-			width:   "99%",
-			height:  "99%",
+			width:   "100%",
+			height:  "100%",
 			color:   "#FFFFFF", //white
 			use:     "HTML5",
 			j2sPath: "jsmol/j2s", // this needs to point to where the j2s directory is.
