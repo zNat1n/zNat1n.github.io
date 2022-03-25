@@ -2,7 +2,7 @@
 <html>
 <head>  
 	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-	<title>Oi leticia</title>
+	<title>NHC10</title>
 
 	<!-- CSS Style Inline: -->
 	<style type="text/css">
@@ -24,7 +24,6 @@
 		// is called when Jmol is ready
 		jmol_isReady = function(applet) {
 			document.title = (applet._id + " - Jmol " + Jmol.___JmolVersion)
-			Jmol._getElement(applet, "appletdiv").style.border="1px solid blue"
 		}
 
 		// initialize Jmol Applet
@@ -32,7 +31,7 @@
 		var Info = {
 			width:   "100%",
 			height:  "100%",
-			color:   "#000000", //black
+			color:   "#FFFFFF", //white
 			use:     "HTML5",
 			j2sPath: "jsmol/j2s", // this needs to point to where the j2s directory is.
 			jarPath: "jsmol/java",// this needs to point to where the java directory is.
@@ -40,7 +39,7 @@
 			debug:   false,
 			readyFunction: jmol_isReady,
 			script:  'load "etanol/NHC10.mol" ;', // on-load Jmol script
-	 		allowJavaScript: false,
+	 		allowJavaScript: true,
 			disableJ2SLoadMonitor: true,
 		}
 
@@ -54,7 +53,7 @@
 
 </head>
 <body>
-<h1>oi leticia</h1>
+<h1>NHC10</h1>
 
 <!-- DIV in which Jmol Applet will be placed -->
 <div id='jmol_div'></div>
