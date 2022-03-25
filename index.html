@@ -13,6 +13,8 @@
 			width:  100vw;
 			float: center;
 			overflow: auto;
+			margin-left: auto;
+    			margin-right: auto;
 		}		
 	</style>
 
@@ -30,8 +32,8 @@
 		// initialize Jmol Applet
 		var myJmol = "myJmol";
 		var Info = {
-			width:   "95%",
-			height:  "95%",
+			width:   "99%",
+			height:  "99%",
 			color:   "#FFFFFF", //white
 			use:     "HTML5",
 			j2sPath: "jsmol/j2s", // this needs to point to where the j2s directory is.
@@ -57,9 +59,6 @@
 
 <script>
 //Criando uma variável global para nos dizer em qual estado a tela atual se encontra.
-isFullScreen = false;
-var elem = document.documentElement;
-function AtivarDesativarFS() {
     //Se o estado atual for "FullScreen", desativá-lo.
     //Note que para as verificações é feito uma validação para todos os possíveis navegadores, facilitando a sua vida.
       if (document.exitFullscreen) {
@@ -89,8 +88,6 @@ function AtivarDesativarFS() {
     elem.msRequestFullscreen();
      isFullScreen = true;
   }
-
-}
 </script>
 
 <!-- DIV in which Jmol Applet will be placed -->
