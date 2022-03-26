@@ -1,10 +1,10 @@
 #!/bin/bash
 
-DIR=(`ls etanol_log`)
+DIR=(`ls etanol_out`)
 for step in "${DIR[@]}"
 do
     mkdir etanol/$step
-    ARCHIVES=(`ls etanol_log/$step | cut -d. -f1`)
+    ARCHIVES=(`ls etanol_out/$step | cut -d. -f1`)
     for log in "${ARCHIVES[@]}"
     do
         cp example.html etanol/$step/$log.html
