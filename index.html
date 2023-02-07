@@ -19,22 +19,25 @@
     <script type="text/javascript" src="jsmol/JSmol.min.js"></script>
     
     <script type="text/javascript">
-		var jmolApplet0 = "jmolApplet0" ;
-    var s = document.location.search;
-		var Info = {
-			width:   "99%",
-			height:  "99%",
-			color:   "#FFFFFF", //white
-			use:     "HTML5",
-			j2sPath: "jsmol/j2s", // this needs to point to where the j2s directory is.
-			jarPath: "jsmol/java",// this needs to point to where the java directory is.
-			jarFile: "JmolAppletSigned.jar",
-			debug:   false,
-			readyFunction: jmol_isReady,
-	 		allowJavaScript: true,
-			disableJ2SLoadMonitor: true,
-		}
-	</script>
+	jmol_isReady = function(applet) {
+		document.title = ("Jmol " + Jmol.___JmolVersion)
+	}
+	var jmolApplet0 = "jmolApplet0" ;
+    	var s = document.location.search;
+	var Info = {
+		width:   "99%",
+		height:  "99%",
+		color:   "#FFFFFF", //white
+		use:     "HTML5",
+		j2sPath: "jsmol/j2s", // this needs to point to where the j2s directory is.
+		jarPath: "jsmol/java",// this needs to point to where the java directory is.
+		jarFile: "JmolAppletSigned.jar",
+		debug:   false,
+		readyFunction: jmol_isReady,
+	 	allowJavaScript: true,
+		disableJ2SLoadMonitor: true,
+	}
+</script>
     
     <style>
       select {
