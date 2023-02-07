@@ -1,48 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-
-	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-	<title>Projeto NHC</title>
-
-</head>
-<body>
-	
-<!-- DIV in which Jmol Applet will be placed -->
-<label for="NHC"> NHC:</label>
-
-<select name="NHC" id="NHC">
-  <option value="NHC10">NHC10</option>
-  <option value="NHC11">NHC11</option>
-  <option value="NHC12">NHC12</option>
-  <option value="NHC13">NHC13</option>
-  <option value="NHC14">NHC14</option>
-  <option value="NHC15">NHC15</option>
-  <option value="NHC16">NHC16</option>
-  <option value="NHC17">NHC17</option>
-  <option value="NHC18">NHC18</option>
-  <option value="NHC19">NHC19</option>
-  <option value="NHC20">NHC20</option>
-  <option value="NHC21">NHC21</option>
-  <option value="NHC22">NHC22</option>
-  <option value="NHC23">NHC23</option>
-  <option value="NHC24">NHC24</option>
-  <option value="NHC25">NHC25</option>
-  <option value="NHC26">NHC26</option>
-  <option value="NHC27">NHC27</option>
-  <option value="NHC28">NHC28</option>
-  <option value="NHC29">NHC29</option>
-  <option value="NHC30">NHC30</option>
-  <option value="NHC31">NHC31</option>
-  <option value="NHC32">NHC32</option>
-  <option value="NHC33">NHC33</option>
-</select>
-  
-  <script>
-    var NHC_select = document.getElementById("NHC").value;
-  </script>
-
-<a href="#" onclick="window.open('https://znat1n.github.io/viewer/TS1_' + NHC_select + '_et.html')" target"_blank"><button>TS1</button></a>
-
-</body>
+  <head>
+    <script type="text/javascript" src="http://chemapps.stolaf.edu/jmol/jsmol/j2s/jsmol.js"></script>
+    <style>
+      select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width:500px; height:500px;">
+      <script type="text/javascript">
+        var jmolApplet0;
+        var s = document.location.search;
+        Jmol._isAsync = false;
+        jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
+        function Info() {
+        }
+      </script>
+      <div id="jmolApplet0" style="width:500px; height:500px;"></div>
+    </div>
+    <div>
+      <select id="fileSelect">
+        <option value="">Selecione o arquivo .log</option>
+        <option value="NHC10.log">NHC10</option>
+        <option value="file2.xyz">Arquivo 2</option>
+        <option value="file3.xyz">Arquivo 3</option>
+      </select>
+    </div>
+    <script>
+      document.getElementById("fileSelect").addEventListener("change", function(event) {
+        var file = event.target.value;
+        if (file) {
+          Jmol.script(jmolApplet0, "load etanol/moleculas/" + file);
+        }
+      });
+    </script>
+  </body>
 </html>
