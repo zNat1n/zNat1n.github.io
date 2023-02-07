@@ -1,7 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+	  <title>Projeto NHC</title>
+	
+	  <style type="text/css">
+      #jmol_div{
+        position: fixed;
+        height: calc(100vh - 2px);
+        width:  calc(100vw - 2px);
+        float: center;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+    
     <script type="text/javascript" src="jsmol/JSmol.min.js"></script>
+    
+    <script type="text/javascript">
+		var jmolApplet0 = "jmolApplet0" ;
+    var s = document.location.search;
+		var Info = {
+			width:   "99%",
+			height:  "99%",
+			color:   "#FFFFFF", //white
+			use:     "HTML5",
+			j2sPath: "jsmol/j2s", // this needs to point to where the j2s directory is.
+			jarPath: "jsmol/java",// this needs to point to where the java directory is.
+			jarFile: "JmolAppletSigned.jar",
+			debug:   false,
+			readyFunction: jmol_isReady,
+	 		allowJavaScript: true,
+			disableJ2SLoadMonitor: true,
+		}
+	</script>
+    
     <style>
       select {
         padding: 10px;
@@ -12,16 +46,14 @@
     </style>
   </head>
   <body>
-    <div style="width:500px; height:500px;">
+    <div>
       <script type="text/javascript">
-        var jmolApplet0;
-        var s = document.location.search;
         Jmol._isAsync = false;
-        jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
-        function Info() {
-        }
+        $(document).ready(function() {
+			    $("#jmol_div").html(Jmol.getAppletHtml(jmolApplet0, Info))
+		    })
+		    var lastPrompt=0;
       </script>
-      <div id="jmolApplet0" style="width:500px; height:500px;"></div>
     </div>
     <div>
       <select id="fileSelect">
@@ -35,7 +67,7 @@
       document.getElementById("fileSelect").addEventListener("change", function(event) {
         var file = event.target.value;
         if (file) {
-          Jmol.script(jmolApplet0, "load etanol/moleculas/" + file);
+          Jmol.script(jmolApplet0, 'set antialiasDisplay ON; load "etanol/moleculas/' + file + '"; cpk ON; wireframe 0.1; spacefill 23%; set bonds OFF; set echo top left; echo "' + file + '"');
         }
       });
     </script>
