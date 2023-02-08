@@ -68,7 +68,7 @@
       document.getElementById("fileSelect").addEventListener("change", function(event) {
         var file = event.target.value;
         if (file) {
-          Jmol.script(jmolApplet0, 'set antialiasDisplay ON; load "etanol/moleculas/' + file + '"; cpk ON; wireframe 0.1; spacefill 23%; set bonds OFF; set echo top left; echo "' + file + '"');
+          Jmol.script(jmolApplet0, 'set antialiasDisplay ON; load "etanol/moleculas/' + file + '"; cpk ON; wireframe 0.1; spacefill 23%; set bonds OFF);
         }
       });
     </script>
